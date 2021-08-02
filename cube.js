@@ -382,6 +382,8 @@ function changeColors() {
         colorArr = ["#FD0100", "#F76915", "#EEDE04", "#A0D636", "#2FA236", "#333ED4"];
         updateCubeDisplay();
     } else if(colorSetting % 5 == 4) {
+        colorArr = ["white", "white", "white", "white", "white", "white"];
+        updateCubeDisplay();
         customColorNum = 0;
         endColorEntry = false;
         document.getElementById("colorInputPrompt").innerHTML = "Enter the Top Face Color:";
