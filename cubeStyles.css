@@ -1,0 +1,49 @@
+table, td {
+    border: 1px solid black;
+}
+
+table {
+    float: left;
+    margin-right: 10px;
+}
+
+td {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+}
+
+#display {
+    padding: 50px;
+    width: 1324px;
+}
+
+#orangeSide td {
+    background-color: orange;
+}
+
+#greenSide td {
+    background-color: green;
+}
+
+#redSide td {
+    background-color: red;
+}
+
+#blueSide td {
+    background-color: blue;
+}
+
+#yellowSide td {
+    background-color: yellow;
+}
+
+.moveBtns {
+    margin-right: 3px; 
+    margin-bottom: 5px; 
+    width: 30px;
+}
+
+.settingBtns {
+    margin-bottom: 5px;
+}

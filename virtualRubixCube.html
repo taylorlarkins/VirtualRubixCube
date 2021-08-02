@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="cubeStyles.css">
+        <script src="cube.js"></script>
+    </head>
+    <body>
+        <div id="display">
+            <table>
+                <tr>
+                    <td id="0"></td>
+                    <td id="1"></td>
+                    <td id="2"></td>
+                </tr>
+                <tr>
+                    <td id="3"></td>
+                    <td id="4"></td>
+                    <td id="5"></td>
+                </tr>
+                <tr>
+                    <td id="6"></td>
+                    <td id="7"></td>
+                    <td id="8"></td>
+                </tr>
+            </table>
+            <table id="orangeSide">
+                <tr>
+                    <td id="9"></td>
+                    <td id="10"></td>
+                    <td id="11"></td>
+                </tr>
+                <tr>
+                    <td id="12"></td>
+                    <td id="13"></td>
+                    <td id="14"></td>
+                </tr>
+                <tr>
+                    <td id="15"></td>
+                    <td id="16"></td>
+                    <td id="17"></td>
+                </tr>
+            </table>
+            <table id="greenSide">
+                <tr>
+                    <td id="18"></td>
+                    <td id="19"></td>
+                    <td id="20"></td>
+                </tr>
+                <tr>
+                    <td id="21"></td>
+                    <td id="22"></td>
+                    <td id="23"></td>
+                </tr>
+                <tr>
+                    <td id="24"></td>
+                    <td id="25"></td>
+                    <td id="26"></td>
+                </tr>
+            </table>
+            <table id="redSide">
+                <tr>
+                    <td id="27"></td>
+                    <td id="28"></td>
+                    <td id="29"></td>
+                </tr>
+                <tr>
+                    <td id="30"></td>
+                    <td id="31"></td>
+                    <td id="32"></td>
+                </tr>
+                <tr>
+                    <td id="33"></td>
+                    <td id="34"></td>
+                    <td id="35"></td>
+                </tr>
+            </table>
+            <table id="blueSide">
+                <tr>
+                    <td id="36"></td>
+                    <td id="37"></td>
+                    <td id="38"></td>
+                </tr>
+                <tr>
+                    <td id="39"></td>
+                    <td id="40"></td>
+                    <td id="41"></td>
+                </tr>
+                <tr>
+                    <td id="42"></td>
+                    <td id="43"></td>
+                    <td id="44"></td>
+                </tr>
+            </table>
+            <table id="yellowSide">
+                <tr>
+                    <td id="45"></td>
+                    <td id="46"></td>
+                    <td id="47"></td>
+                </tr>
+                <tr>
+                    <td id="48"></td>
+                    <td id="49"></td>
+                    <td id="50"></td>
+                </tr>
+                <tr>
+                    <td id="51"></td>
+                    <td id="52"></td>
+                    <td id="53"></td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <div style="float: left; width: 100%;">
+            <h3 style="margin-top: 25px;">Enter Your Moves Here:</h3>
+            <input id="moveInput">
+            <button style="margin-left: 5px;" onclick="performMoves()">Execute</button>
+            <button id="tglInpMd" style="margin-left: 5px;" onclick="toggleInputMode()">Input Mode: Normal</button>
+            <button style="margin-left: 5px;" onclick="resetCube()">Reset Cube</button>
+        </div>
+        <div id="regMoves" style="float: left; width: 33%;">
+            <h3>Regular Moves</h3>
+            <button id="RBtn" class="moveBtns" onclick="r();updateCubeDisplay()">R</button>
+            <button id="LBtn" class="moveBtns" onclick="l();updateCubeDisplay()">L</button>
+            <button id="UBtn" class="moveBtns" onclick="u();updateCubeDisplay()">U</button>
+            <button id="DBtn" class="moveBtns" onclick="d();updateCubeDisplay()">D</button>
+            <button id="FBtn" class="moveBtns" onclick="f();updateCubeDisplay()">F</button>
+            <button id="BBtn" class="moveBtns" onclick="b();updateCubeDisplay()">B</button>
+            <button id="MBtn" class="moveBtns" onclick="m();updateCubeDisplay()">M</button>
+            <button id="EBtn" class="moveBtns" onclick="e();updateCubeDisplay()">E</button>
+            <button id="SBtn" class="moveBtns" onclick="s();updateCubeDisplay()">S</button>
+            <button id="xBtn" class="moveBtns" onclick="x();updateCubeDisplay()">x</button>
+            <button id="yBtn" class="moveBtns" onclick="y();updateCubeDisplay()">y</button>
+            <button id="zBtn" class="moveBtns" onclick="z();updateCubeDisplay()">z</button>
+            <br>
+            <button id="R'Btn" class="moveBtns" onclick="rPrime();updateCubeDisplay()">R'</button>
+            <button id="L'Btn" class="moveBtns" onclick="lPrime();updateCubeDisplay()">L'</button>
+            <button id="U'Btn" class="moveBtns" onclick="uPrime();updateCubeDisplay()">U'</button>
+            <button id="D'Btn" class="moveBtns" onclick="dPrime();updateCubeDisplay()">D'</button>
+            <button id="F'Btn" class="moveBtns" onclick="fPrime();updateCubeDisplay()">F'</button>
+            <button id="B'Btn" class="moveBtns" onclick="bPrime();updateCubeDisplay()">B'</button>
+            <button id="M'Btn" class="moveBtns" onclick="mPrime();updateCubeDisplay()">M'</button>
+            <button id="E'Btn" class="moveBtns" onclick="ePrime();updateCubeDisplay()">E'</button>
+            <button id="S'Btn" class="moveBtns" onclick="sPrime();updateCubeDisplay()">S'</button>
+            <button id="x'Btn" class="moveBtns" onclick="xPrime();updateCubeDisplay()">x'</button>
+            <button id="y'Btn" class="moveBtns" onclick="yPrime();updateCubeDisplay()">y'</button>
+            <button id="z'Btn" class="moveBtns" onclick="zPrime();updateCubeDisplay()">z'</button>
+        </div>
+        <div id="blindMoves" style="width: 33%; float: left;">
+            <h3>Blindfolded Algorithms</h3>
+            <button id="edgeAlgBtn" onclick="edgeAlg();updateCubeDisplay()">Edge Algorithm</button>
+            <button id="cornerAlgBtn" onclick="cornerAlg();updateCubeDisplay()">Corner Algorithm</button>
+            <button id="parityAlgBtn" onclick="parity();updateCubeDisplay()">Parity Algorithm</button>
+            <h4>Edge Algorithms</h4>
+            <button id="eABtn" class="moveBtns" onclick="eA();updateCubeDisplay()">A</button>
+            <button id="eCBtn" class="moveBtns" onclick="eC();updateCubeDisplay()">C</button>
+            <button id="eDBtn" class="moveBtns" onclick="edgeAlg();updateCubeDisplay()">D</button>
+            <button id="eEBtn" class="moveBtns" onclick="eE();updateCubeDisplay()">E</button>
+            <button id="eFBtn" class="moveBtns" onclick="eF();updateCubeDisplay()">F</button>
+            <button id="eGBtn" class="moveBtns" onclick="eG();updateCubeDisplay()">G</button>
+            <button id="eHBtn" class="moveBtns" onclick="eH();updateCubeDisplay()">H</button>
+            <button id="eIBtn" class="moveBtns" onclick="eI();updateCubeDisplay()">I</button>
+            <button id="eJBtn" class="moveBtns" onclick="eJ();updateCubeDisplay()">J</button>
+            <button id="eKBtn" class="moveBtns" onclick="eK();updateCubeDisplay()">K</button>
+            <button id="eLBtn" class="moveBtns" onclick="eL();updateCubeDisplay()">L</button>
+            <br>
+            <button id="eNBtn" class="moveBtns" onclick="eN();updateCubeDisplay()">N</button>
+            <button id="eOBtn" class="moveBtns" onclick="eO();updateCubeDisplay()">O</button>
+            <button id="ePBtn" class="moveBtns" onclick="eP();updateCubeDisplay()">P</button>
+            <button id="eQBtn" class="moveBtns" onclick="eQ();updateCubeDisplay()">Q</button>
+            <button id="eRBtn" class="moveBtns" onclick="eR();updateCubeDisplay()">R</button>
+            <button id="eSBtn" class="moveBtns" onclick="eS();updateCubeDisplay()">S</button>
+            <button id="eTBtn" class="moveBtns" onclick="eT();updateCubeDisplay()">T</button>
+            <button id="eUBtn" class="moveBtns" onclick="eU();updateCubeDisplay()">U</button>
+            <button id="eVBtn" class="moveBtns" onclick="eV();updateCubeDisplay()">V</button>
+            <button id="eWBtn" class="moveBtns" onclick="eW();updateCubeDisplay()">W</button>
+            <button id="eXBtn" class="moveBtns" onclick="eX();updateCubeDisplay()">X</button>
+            <h4>Corner Algorithms</h4>
+            <button class="moveBtns" onclick="cB();updateCubeDisplay()">B</button>
+            <button class="moveBtns" onclick="cC();updateCubeDisplay()">C</button>
+            <button class="moveBtns" onclick="cD();updateCubeDisplay()">D</button>
+            <button class="moveBtns" onclick="cF();updateCubeDisplay()">F</button>
+            <button class="moveBtns" onclick="cG();updateCubeDisplay()">G</button>
+            <button class="moveBtns" onclick="cH();updateCubeDisplay()">H</button>
+            <button class="moveBtns" onclick="cI();updateCubeDisplay()">I</button>
+            <button class="moveBtns" onclick="cJ();updateCubeDisplay()">J</button>
+            <button class="moveBtns" onclick="cK();updateCubeDisplay()">K</button>
+            <button class="moveBtns" onclick="cL();updateCubeDisplay()">L</button>
+            <button class="moveBtns" onclick="cM();updateCubeDisplay()">M</button>
+            <br>
+            <button class="moveBtns" onclick="cN();updateCubeDisplay()">N</button>
+            <button class="moveBtns" onclick="cO();updateCubeDisplay()">O</button>
+            <button class="moveBtns" onclick="cP();updateCubeDisplay()">P</button>
+            <button class="moveBtns" onclick="cQ();updateCubeDisplay()">Q</button>
+            <button class="moveBtns" onclick="cS();updateCubeDisplay()">S</button>
+            <button class="moveBtns" onclick="cT();updateCubeDisplay()">T</button>
+            <button class="moveBtns" onclick="cU();updateCubeDisplay()">U</button>
+            <button class="moveBtns" onclick="cornerAlg();updateCubeDisplay()">V</button>
+            <button class="moveBtns" onclick="cW();updateCubeDisplay()">W</button>
+            <button class="moveBtns" onclick="cX();updateCubeDisplay()">X</button>
+        </div>
+        <div id="settings" style="width: 33%; float: left;">
+            <h3>Settings:</h3>
+            <button id="tglMvBtns" class="settingBtns" onclick="toggleMoveButtons()" style="margin-bottom: 5px;">Move Buttons: ON</button>
+            <br>
+            <button id="tglLtrs" class="settingBtns" onclick="toggleLetters()">Letters in Cube: OFF</button>
+            <br>
+            <button id="ColorChanger" class="settingBtns" onclick="changeColors()">Color Preset: Default</button>
+            <div id="colorSettings" style="visibility: hidden;">
+                <p id="colorInputPrompt">Enter the Top Face Color:</p>
+                <input id="colorInput">
+                <button id="colorEnterBtn" onclick="customColors()">Enter</button>
+            </div>
+        </div>
+    </body>
+</html>
